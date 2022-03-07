@@ -7,7 +7,7 @@
 #'
 #' @return `NULL`
 #' @export
-spotify_auth <- function() {
+authenticate <- function() {
 
   ## Adding code that informs the user of what's happening
   usethis::ui_info("Attempting to authenticate ...")
@@ -40,12 +40,6 @@ spotify_auth <- function() {
     )
   )
 
-  content_type <- httr::content_type("application/x-www-form-urlencoded")
-
-  body <- list(
-    "grant_type" = "client_credentials"
-  )
-
   usethis::ui_info("Making API request ...")
 
   ## Request to authenticate
@@ -62,13 +56,6 @@ spotify_auth <- function() {
     usethis::ui_info("Request successful!")
 
     request_content <- request %>% httr::content()
-
-    ## Try to create a timer to let user know how much time remains on the token
-    # request_time <- Sys.time()
-    #
-    # as.numeric(as.POSIXct(Sys.time())) - as.numeric(as.POSIXct(request_time))
-    #
-    # # request_time <- stringr::str_extract(Sys.time(), "[[:digit:]]{2}:[[:digit:]]{2}:[[:digit:]]{2}") %>% lubridate::hms()
 
     token_header <- httr::add_headers(
       "Authorization" = paste0("Bearer ", request_content$access_token)
