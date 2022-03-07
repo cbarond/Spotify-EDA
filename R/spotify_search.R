@@ -1,4 +1,4 @@
-#' Title
+#' Search with Spotify's API
 #'
 #' @param name A string. The name of what the user wants to search for within Spotify's database
 #'

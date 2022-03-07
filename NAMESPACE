@@ -2,5 +2,6 @@
 
 export("%>%")
 export(authenticate)
+export(convert_spaces)
 export(spotify_search)
 importFrom(magrittr,"%>%")

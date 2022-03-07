@@ -2,7 +2,7 @@
 % Please edit documentation in R/spotify_search.R
 \name{spotify_search}
 \alias{spotify_search}
-\title{Title}
+\title{Search with Spotify's API}
 \usage{
 spotify_search(track_name = NULL, artist_name = NULL, album_name = NULL)
 }
@@ -15,5 +15,5 @@ spotify_search(track_name = NULL, artist_name = NULL, album_name = NULL)
 
 }
 \description{
-Title
+Search with Spotify's API
 }
